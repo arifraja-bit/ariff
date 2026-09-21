@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Wahida 💖</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    color: white;
+    background:
+        radial-gradient(circle at 20% 20%, #ff9dcc 0%, transparent 25%),
+        radial-gradient(circle at 80% 30%, #a45ee5 0%, transparent 25%),
+        linear-gradient(135deg, #18001f, #4b164c, #18001f);
+}
+
+/* =========================
+   COMMON PAGE STYLE
+========================= */
+
+.page {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.08);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.page.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.card {
+    width: min(90%, 650px);
+    padding: 45px 30px;
+    border-radius: 35px;
+
+    background: rgba(255,255,255,.10);
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 0 50px rgba(255,70,170,.25),
+        inset 0 0 30px rgba(255,255,255,.05);
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: clamp(50px, 12vw, 90px);
+
+    color: white;
+
+    text-shadow:
+        0 0 10px #ff69b4,
+        0 0 30px #ff1493,
+        0 0 60px #ff69b4;
+
+    animation: glow 2s infinite alternate;
+}
+
+h2 {
+    font-size: clamp(30px, 7vw, 55px);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #ffeaf5;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 32px;
+
+    border: none;
+    border-radius: 50px;
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        45deg,
+        #ff1493,
+        #ff69b4,
+        #c71585
+    );
+
+    box-shadow:
+        0 8px 30px rgba(255,20,147,.4);
+
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 0 35px #ff69b4;
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+            0 0 10px #ff69b4,
+            0 0 25px #ff1493;
+    }
+
+    to {
+        text-shadow:
+            0 0 20px white,
+            0 0 45px #ff1493,
+            0 0 70px #ff69b4;
+    }
+}
+
+/* =========================
+   PAGE 1
+========================= */
+
+.date {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #ffd1e8;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.heart-big {
+    font-size: 65px;
+    animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+/* =========================
+   PAGE 2
+========================= */
+
+.letter {
+    text-align: left;
+    margin-top: 25px;
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+.letter strong {
+    color: #ffb6d9;
+}
+
+/* =========================
+   PAGE 3 GIFT
+========================= */
+
+.gift-area {
+    margin: 35px auto;
+    cursor: pointer;
+    width: 180px;
+    height: 170px;
+    position: relative;
+}
+
+.gift {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+
+    width: 150px;
+    height: 110px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4fa3,
+        #d41475
+    );
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.4);
+
+    transition: .5s;
+}
+
+.gift::before {
+    content: "";
+
+    position: absolute;
+    left: 63px;
+    top: 0;
+
+    width: 25px;
+    height: 110px;
+
+    background: #ffd700;
+}
+
+.gift::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 35px;
+
+    width: 150px;
+    height: 22px;
+
+    background: #ffd700;
+}
+
+.lid {
+    position: absolute;
+
+    left: 5px;
+    top: -15px;
+
+    width: 160px;
+    height: 35px;
+
+    background: #ff69b4;
+
+    border-radius: 8px;
+
+    z-index: 3;
+
+    transition: .6s;
+}
+
+.bow {
+    position: absolute;
+    top: -55px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 65px;
+
+    z-index: 4;
+}
+
+.gift-area.open .lid {
+    transform:
+        translateY(-70px)
+        rotate(-10deg);
+}
+
+.gift-area.open .gift {
+    animation: giftBounce .7s;
+}
+
+@keyframes giftBounce {
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.gift-text {
+    margin-top: 20px;
+    color: #ffd1e8;
+}
+
+/* =========================
+   PAGE 4
+========================= */
+
+.final-name {
+    font-family: Georgia, serif;
+    font-size: clamp(50px, 11vw, 85px);
+    font-style: italic;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffb6d9,
+            #fff
+        );
+
+    background-size: 200%;
+
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200%;
+    }
+}
+
+.final-message {
+    margin-top: 20px;
+}
+
+.signature {
+    margin-top: 30px;
+    font-family: cursive;
+    font-size: 23px;
+    color: #ffc8e2;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+    bottom: -60px;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    animation:
+        floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg)
+            scale(1.5);
+
+        opacity: 0;
+    }
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+    position: fixed;
+
+    width: 8px;
+    height: 15px;
+
+    top: -20px;
+
+    z-index: 20;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkle {
+    position: fixed;
+
+    width: 5px;
+    height: 5px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px #ff69b4;
+
+    pointer-events: none;
+
+    animation:
+        sparkle 1.5s forwards;
+}
+
+@keyframes sparkle {
+
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+
+@media(max-width:500px) {
+
+    .card {
+        padding: 35px 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     PAGE 1
+========================= -->
+
+<section class="page active" id="page1">
+
+    <div class="card">
+
+        <div class="heart-big">💖</div>
+
+        <div class="date">
+            A Little Birthday Surprise
+        </div>
+
+        <h1>Wahida</h1>
+
+        <p class="subtitle">
+            Today is a little more beautiful...
+            because it's your day. 🌸
+        </p>
+
+        <button onclick="nextPage(2)">
+            ✨ Start The Surprise
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 2
+========================= -->
+
+<section class="page" id="page2">
+
+    <div class="card">
+
+        <h2>💌 A Little Letter</h2>
+
+        <div class="letter">
+
+            <p>
+                Dear <strong>My love</strong>,
+            </p>
+
+            <br>
+
+            <p>
+                Happy Birthday My wife 💖🌷
+                Allah always bless you...✨
+                I wish you stay always happy,
+                get the all achievement in your
+                life,always keep smiling 😊💖
+                Thank you for coming in my life❤️
+            </p>
+
+            <br>
+
+            <p>
+                May your birthday bring you
+                countless reasons to smile,
+                beautiful memories,
+                peaceful moments,
+                and dreams that slowly turn into reality. ✨
+            </p>
+
+            <br>
+
+            <p>
+                Never stop being the beautiful person
+                you are. 🌷
+            </p>
+
+        </div>
+
+        <button onclick="nextPage(3)">
+            🎁 I Have Another Surprise
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 3
+========================= -->
+
+<section class="page" id="page3">
+
+    <div class="card">
+
+        <h2>🎁 A Gift For You</h2>
+
+        <p>
+            There is something hidden inside...
+        </p>
+
+        <div
+            class="gift-area"
+            id="gift"
+            onclick="openGift()"
+        >
+
+            <div class="bow">🎀</div>
+
+            <div class="lid"></div>
+
+            <div class="gift"></div>
+
+        </div>
+
+        <div class="gift-text" id="giftText">
+            👆 Tap the gift box
+        </div>
+
+        <button
+            id="nextButton"
+            style="display:none"
+            onclick="nextPage(4)"
+        >
+            🌙 One Last Surprise
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 4
+========================= -->
+
+<section class="page" id="page4">
+
+    <div class="card">
+
+        <div style="font-size:55px;">
+            🎂✨🌸
+        </div>
+
+        <h2>
+            Happy Birthday
+        </h2>
+
+        <div class="final-name">
+            Wahida
+        </div>
+
+        <p class="final-message">
+
+            May this new chapter of your life
+            be filled with happiness,
+            laughter, love and beautiful surprises.
+
+            <br><br>
+
+            May every morning give you
+            a reason to smile...
+
+            <br>
+
+            And may every dream in your heart
+            find its way to you. 💖
+
+            <br><br>
+
+            <strong>
+                Keep smiling, My Love.
+                The world looks a little prettier
+                when you do. 🌸
+            </strong>
+
+        </p>
+
+        <div class="signature">
+            With warmest wishes, always ♡
+        </div>
+
+        <button onclick="celebrate()">
+            🎉 Celebrate!
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
+function nextPage(number) {
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page => {
+
+            page.classList.remove("active");
+
+        });
+
+    document
+        .getElementById("page" + number)
+        .classList.add("active");
+
+    createHeartBurst();
+}
+
+
+/* =========================
+   OPEN GIFT
+========================= */
+
+function openGift() {
+
+    const gift =
+        document.getElementById("gift");
+
+    const text =
+        document.getElementById("giftText");
+
+    const button =
+        document.getElementById("nextButton");
+
+    gift.classList.add("open");
+
+    text.innerHTML =
+        "💖 Surprise! You deserve all the happiness in the world. ✨";
+
+    button.style.display = "inline-block";
+
+    createHeartBurst();
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+const heartList = [
+    "💖",
+    "💕",
+    "💗",
+    "💓",
+    "💘",
+    "🌸",
+    "✨"
+];
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+        heartList[
+            Math.floor(
+                Math.random() *
+                heartList.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        18 + Math.random() * 28 + "px";
+
+    heart.style.animationDuration =
+        5 + Math.random() * 6 + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(
+        () => heart.remove(),
+        12000
+    );
+}
+
+setInterval(createHeart, 500);
+
+
+/* =========================
+   HEART BURST
+========================= */
+
+function createHeartBurst() {
+
+    for(let i = 0; i < 20; i++) {
+
+        setTimeout(
+            createHeart,
+            i * 70
+        );
+
+    }
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+function createSparkle() {
+
+    const sparkle =
+        document.createElement("div");
+
+    sparkle.className =
+        "sparkle";
+
+    sparkle.style.left =
+        Math.random() * 100 + "vw";
+
+    sparkle.style.top =
+        Math.random() * 100 + "vh";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(
+        () => sparkle.remove(),
+        1500
+    );
+}
+
+setInterval(
+    createSparkle,
+    300
+);
+
+
+/* =========================
+   FINAL CELEBRATION
+========================= */
+
+function celebrate() {
+
+    // Hearts
+    for(let i = 0; i < 60; i++) {
+
+        setTimeout(
+            createHeart,
+            i * 50
+        );
+
+    }
+
+    // Confetti
+    for(let i = 0; i < 120; i++) {
+
+        setTimeout(
+            createConfetti,
+            i * 15
+        );
+
+    }
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti() {
+
+    const confetti =
+        document.createElement("div");
+
+    confetti.className =
+        "confetti";
+
+    const colors = [
+        "#ff69b4",
+        "#ffd700",
+        "#ffffff",
+        "#ff1493",
+        "#9d4edd",
+        "#00ffff"
+    ];
+
+    confetti.style.background =
+        colors[
+            Math.floor(
+                Math.random() *
+                colors.length
+            )
+        ];
+
+    confetti.style.left =
+        Math.random() * 100 + "vw";
+
+    confetti.style.animationDuration =
+        3 + Math.random() * 4 + "s";
+
+    confetti.style.transform =
+        `rotate(${Math.random() * 360}deg)`;
+
+    document.body.appendChild(confetti);
+
+    setTimeout(
+        () => confetti.remove(),
+        8000
+    );
+}
+
+</script>
+
+</body>
+</html>
